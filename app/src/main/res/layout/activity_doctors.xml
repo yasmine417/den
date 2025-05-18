@@ -6,7 +6,7 @@
     android:background="@drawable/gradient_background"
     android:padding="16dp">
 
-    <!-- قائمة الأطباء -->
+    <!-- Card affichant les dentistes -->
     <FrameLayout
         android:id="@+id/doctorsCard"
         android:layout_width="match_parent"
@@ -22,17 +22,17 @@
             android:id="@+id/doctorsList"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Loading doctors..."
+            android:text="Chargement des dentistes..."
             android:textSize="16sp"
             android:textColor="#1976D2" />
     </FrameLayout>
 
-    <!-- زر الرجوع -->
+    <!-- Bouton Retour -->
     <Button
         android:id="@+id/backButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back"
+        android:text="Retour"
         android:textColor="#FFFFFF"
         android:background="@drawable/button_background"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -40,5 +40,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginBottom="16dp"
         android:paddingHorizontal="24dp" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
@@ -24,22 +26,30 @@ public class DoctorsActivity extends AppCompatActivity {
         doctorsList = findViewById(R.id.doctorsList);
         backButton = findViewById(R.id.backButton);
 
-        db.collection("doctors")
+        // Charger les docteurs (depuis "users" où role = doctor)
+        db.collection("users")
+                .whereEqualTo("role", "doctor")
                 .get()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         StringBuilder doctors = new StringBuilder();
                         for (QueryDocumentSnapshot document : task.getResult()) {
-                            doctors.append(document.getId()).append(": ").append(document.getData()).append("\n");
+                            String nom = document.getString("nom");
+                            String specialite = document.getString("specialite");
+                            String email = document.getString("email");
+
+                            doctors.append("👨‍⚕️ Nom : ").append(nom).append("\n")
+                                    .append("🦷 Spécialité : ").append(specialite).append("\n")
+                                    .append("📧 Email : ").append(email).append("\n\n");
                         }
                         doctorsList.setText(doctors.toString());
                     } else {
-                        Log.w("Firestore", "Error getting doctors: ", task.getException());
-                        doctorsList.setText("Error loading doctors");
+                        Log.w("Firestore", "Erreur de chargement des docteurs : ", task.getException());
+                        doctorsList.setText("Erreur lors du chargement des docteurs");
                     }
                 });
 
-        // زر الرجوع
+        // Bouton retour au profil
         backButton.setOnClickListener(v -> {
             Intent intent = new Intent(DoctorsActivity.this, ProfileActivity.class);
             startActivity(intent);

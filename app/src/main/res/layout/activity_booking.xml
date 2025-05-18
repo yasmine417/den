@@ -1,36 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:background="#F8FAFB">
 
-    <EditText
-        android:id="@+id/patientId"
+    <!-- Contenu principal -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="24dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Patient ID"
-        android:inputType="text" />
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/doctorId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Doctor ID"
-        android:inputType="text" />
+        <TextView
+            android:id="@+id/dateTextView"
+            android:text="Sélectionner la date"
+            android:padding="16dp"
+            android:background="@drawable/rounded_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#333"
+            android:textSize="16sp"
+            android:drawableStart="@android:drawable/ic_menu_my_calendar"
+            android:drawablePadding="12dp"
+            android:focusable="false"
+            android:clickable="true" />
 
-    <EditText
-        android:id="@+id/date"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Date (YYYY-MM-DD)"
-        android:inputType="date" />
+        <TextView
+            android:id="@+id/timeTextView"
+            android:text="Sélectionner l'heure"
+            android:padding="16dp"
+            android:background="@drawable/rounded_input"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#333"
+            android:textSize="16sp"
+            android:drawableStart="@android:drawable/ic_lock_idle_alarm"
+            android:drawablePadding="12dp"
+            android:focusable="false"
+            android:clickable="true" />
 
-    <Button
-        android:id="@+id/saveButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Save Appointment"
-        android:layout_gravity="center" />
+        <Spinner
+            android:id="@+id/doctorSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rounded_input"
+            android:padding="12dp" />
 
-</LinearLayout>
+        <ListView
+            android:id="@+id/disponibilitesListView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="24dp"
+            android:background="#FFF"
+            android:elevation="4dp"
+            android:padding="8dp"
+            android:clipToPadding="false" />
+
+        <Button
+            android:id="@+id/saveButton"
+            android:text="Réserver un rendez-vous"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/rounded_button"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:elevation="4dp" />
+
+        <Button
+            android:id="@+id/listDoctorsButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lister les docteurs"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/rounded_button"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:elevation="2dp" />
+
+        <Button
+            android:id="@+id/historique"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Historique"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/rounded_button"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:elevation="2dp" />
+    </LinearLayout>
+
+    <!-- Navigation drawer à compléter selon besoin -->
+</androidx.drawerlayout.widget.DrawerLayout>

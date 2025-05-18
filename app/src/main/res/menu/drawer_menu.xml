@@ -1,0 +1,6 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/nav_booking" android:title="Prendre un rendez-vous" />
+    <item android:id="@+id/nav_doctors" android:title="Consulter les docteurs" />
+    <item android:id="@+id/nav_profile" android:title="Voir le profil" />
+    <item android:id="@+id/nav_symptom" android:title="Analyse de symptômes" />
+</menu>

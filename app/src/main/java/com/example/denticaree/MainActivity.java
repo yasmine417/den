@@ -2,64 +2,47 @@ package com.example.denticaree;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
+
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
-    private FirebaseAuth mAuth;
-    private EditText emailInput, passwordInput;
-    private Button loginButton, registerButton;
-
+    RadioGroup userTypeGroup;
+    RadioButton radioStudent, radioTeacher;
+    Button continueButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main); // XML associé
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_main);
+        userTypeGroup = findViewById(R.id.userTypeGroup);
+        radioStudent = findViewById(R.id.radioStudent);
+        radioTeacher = findViewById(R.id.radioTeacher);
+        continueButton = findViewById(R.id.continueButton);
 
-        mAuth = FirebaseAuth.getInstance();
+        continueButton.setOnClickListener(v -> {
+            int selectedId = userTypeGroup.getCheckedRadioButtonId();
 
-        emailInput = findViewById(R.id.emailInput);
-        passwordInput = findViewById(R.id.passwordInput);
-        loginButton = findViewById(R.id.loginButton);
-        registerButton = findViewById(R.id.registerButton);
+            if (selectedId == -1) {
+                Toast.makeText(MainActivity.this, "Veuillez choisir un rôle", Toast.LENGTH_SHORT).show();
+            } else if (selectedId == R.id.radioStudent) {
 
-        loginButton.setOnClickListener(v -> {
-            String email = emailInput.getText().toString().trim();
-            String password = passwordInput.getText().toString().trim();
+                Intent intent = new Intent(MainActivity.this, LoginPatientActivity.class);
+                startActivity(intent);
+            } else if (selectedId == R.id.radioTeacher) {
 
-            if (email.isEmpty() || password.isEmpty()) {
-                Toast.makeText(MainActivity.this, "Veuillez remplir tous les champs", Toast.LENGTH_SHORT).show();
-            } else {
-                mAuth.signInWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(task -> {
-                            if (task.isSuccessful()) {
-                                FirebaseUser user = mAuth.getCurrentUser();
-                                Toast.makeText(MainActivity.this, "Bienvenue " + user.getEmail(), Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(MainActivity.this, ProfileActivity.class));
-                                finish();
-                            } else {
-                                Toast.makeText(MainActivity.this, "Erreur : " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
-                            }
-                        });
-            }
+                Intent intent = new Intent(MainActivity.this, LoginDoctorActivity.class);
+                startActivity(intent);  }
         });
-
-        registerButton.setOnClickListener(v -> {
-            startActivity(new Intent(MainActivity.this, SignUpActivity.class));
-        });
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser != null) {
-            startActivity(new Intent(MainActivity.this, ProfileActivity.class));
-            finish();
-        }
     }
 }

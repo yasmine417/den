@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F4F8">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Icône Dent -->
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/tooth"
+            android:layout_gravity="center"
+            android:contentDescription="Icône dent"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Titre -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ajouter une disponibilité"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#1A2C42"
+            android:layout_gravity="center"
+            android:layout_marginBottom="32dp" />
+
+        <!-- Champ Date -->
+        <TextView
+            android:id="@+id/dateTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Choisir une date"
+            android:padding="16dp"
+            android:background="@drawable/rounded_input"
+            android:drawableStart="@android:drawable/ic_menu_my_calendar"
+            android:drawablePadding="10dp"
+            android:focusable="false"
+            android:clickable="true"
+            android:textSize="16sp"
+            android:textColor="#333"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Champ Heure -->
+        <TextView
+            android:id="@+id/timeTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Choisir une heure"
+            android:padding="16dp"
+            android:background="@drawable/rounded_input"
+            android:drawableStart="@android:drawable/ic_lock_idle_alarm"
+            android:drawablePadding="10dp"
+            android:focusable="false"
+            android:clickable="true"
+            android:textSize="16sp"
+            android:textColor="#333"
+            android:layout_marginBottom="32dp" />
+
+        <!-- Bouton -->
+        <Button
+            android:id="@+id/addButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ajouter disponibilité"
+            android:background="@drawable/rounded_button"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:elevation="4dp" />
+    </LinearLayout>
+</ScrollView>

@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "92325778283",
-    "project_id": "denticaree-19fbe",
-    "storage_bucket": "denticaree-19fbe.firebasestorage.app"
+    "project_number": "278951463928",
+    "project_id": "denticaree-bb635",
+    "storage_bucket": "denticaree-bb635.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:92325778283:android:7cdd46e8e1df26077ab22e",
+        "mobilesdk_app_id": "1:278951463928:android:413d803367fedbe53fe40d",
         "android_client_info": {
           "package_name": "com.example.denticaree"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDQ5lPW8-bFqyQ9t1KeR0YBv6kuWOdYyQg"
+          "current_key": "AIzaSyCzHfiL16ceXN_tnpGyb5LER_a1pPDjGk8"
         }
       ],
       "services": {

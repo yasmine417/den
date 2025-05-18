@@ -1,0 +1,81 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_card"
+    android:elevation="3dp"
+    android:layout_margin="8dp">
+
+    <TextView
+        android:id="@+id/tvPatientName"
+        android:text="👤 Nom :"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:textColor="#2A2A2A"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvPatientEmail"
+        android:text="✉️ Email :"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:textColor="#444444"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:text="📅 Date :"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:textColor="#444444"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:text="⏰ Heure :"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:textColor="#444444"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvMotif"
+        android:text="🦷 Motif :"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:textColor="#444444"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvTraitement"
+        android:text="💊 Traitement :"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:textColor="#444444"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:text="📌 Statut :"
+        android:textStyle="bold"
+
+        android:textSize="14sp"
+        android:textColor="#4CAF50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#CCCCCC"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp" />
+
+</LinearLayout>
