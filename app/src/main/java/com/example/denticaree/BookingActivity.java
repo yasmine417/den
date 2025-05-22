@@ -13,6 +13,13 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.*;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import okhttp3.*;
+
+import java.io.IOException;
 import java.util.*;
 
 public class BookingActivity extends AppCompatActivity {
@@ -23,6 +30,7 @@ public class BookingActivity extends AppCompatActivity {
     private Button saveButton;
     private Button listDoctorsButton;
     private Button historique;
+    private Button sugg;
     private ListView disponibilitesListView;
 
     private String selectedDoctorId;
@@ -57,6 +65,7 @@ public class BookingActivity extends AppCompatActivity {
         saveButton = findViewById(R.id.saveButton);
         listDoctorsButton = findViewById(R.id.listDoctorsButton);
         historique = findViewById(R.id.historique);
+        sugg = findViewById(R.id.sugg);
         disponibilitesListView = findViewById(R.id.disponibilitesListView);
 
         loadDoctors();
@@ -73,11 +82,26 @@ public class BookingActivity extends AppCompatActivity {
             Intent intent = new Intent(BookingActivity.this, DoctorsActivity.class);
             startActivity(intent);
         });
+        sugg.setOnClickListener(v -> {
+            Intent intent = new Intent(BookingActivity.this, SuggestionActivity.class);
+            startActivity(intent);
+        });
 
         historique.setOnClickListener(v -> {
             Intent intent = new Intent(BookingActivity.this, MyAppointmentsActivity.class);
             startActivity(intent);
         });
+        EditText inputMessage = findViewById(R.id.inputMessage);
+        TextView responseTextView = findViewById(R.id.responseTextView);
+        Button iaButton = findViewById(R.id.ia);
+
+
+
+        // Bouton d’envoi du message à l’IA
+
+
+
+
     }
 
     private void loadDoctors() {
@@ -235,4 +259,6 @@ public class BookingActivity extends AppCompatActivity {
                     saveButton.setEnabled(true);
                 });
     }
+
+
 }

@@ -48,6 +48,18 @@ dependencies {
     implementation ("androidx.drawerlayout:drawerlayout:1.2.0")
     implementation ("com.google.android.material:material:1.12.0")
     implementation ("androidx.appcompat:appcompat:1.7.0")
+    implementation ("com.google.firebase:firebase-ml-model-interpreter:22.0.4")
+    implementation ("org.tensorflow:tensorflow-lite:2.13.0") // ou dernière version
 
+    implementation ("com.squareup.okhttp3:okhttp:4.9.3")
+
+
+    implementation("com.google.ai.client.generativeai:generativeai:0.9.0")
+
+    // Required for one-shot operations (to use `ListenableFuture` from Guava Android)
+    implementation("com.google.guava:guava:31.0.1-android")
+
+    // Required for streaming operations (to use `Publisher` from Reactive Streams)
+    implementation("org.reactivestreams:reactive-streams:1.0.4")
 
 }

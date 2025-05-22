@@ -96,6 +96,45 @@
             android:textStyle="bold"
             android:textSize="16sp"
             android:elevation="2dp" />
+        <Button
+            android:id="@+id/ia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Demander à l'IA" />
+        <EditText
+            android:id="@+id/inputMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tape ton message ici"
+            android:padding="12dp"
+            android:background="@drawable/rounded_input"
+            android:layout_marginTop="16dp"
+            android:textColor="#333"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/responseTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Réponse de l'IA apparaîtra ici"
+            android:padding="12dp"
+            android:layout_marginTop="12dp"
+            android:textColor="#000"
+            android:textSize="16sp"
+            android:background="#EEE"
+            android:minHeight="80dp" />
+
+        <Button
+            android:id="@+id/sugg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sugg"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/rounded_button"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:elevation="2dp" />
     </LinearLayout>
 
     <!-- Navigation drawer à compléter selon besoin -->

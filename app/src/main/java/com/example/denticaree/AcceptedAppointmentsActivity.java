@@ -30,6 +30,12 @@ public class AcceptedAppointmentsActivity extends AppCompatActivity {
 
         listViewAccepted = findViewById(R.id.listViewAccepted);
         db = FirebaseFirestore.getInstance();
+        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
+            Toast.makeText(this, "Utilisateur non connecté", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, LoginDoctorActivity.class)); // ou l'activité de connexion
+            finish();
+            return;
+        }
 
         doctorUid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
